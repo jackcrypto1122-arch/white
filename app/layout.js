@@ -17,6 +17,8 @@ export const metadata = {
   authors: [{ name: 'Blackwood Protocol Team' }],
   icons: {
     icon: '/favicon.ico',
+    shortcut: '/favicon.png',
+    apple: '/icon.png',
   },
 };
 
@@ -24,7 +26,7 @@ export default function RootLayout({ children }) {
   const chapters = getAllChapters();
 
   return (
-    <html lang="en" className={manrope.variable}>
+    <html lang="en" className={manrope.variable} data-scroll-behavior="smooth">
       <body className={manrope.className}>
         <WhitepaperShell chapters={chapters}>
           {children}
