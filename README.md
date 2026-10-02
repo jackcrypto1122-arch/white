@@ -33,9 +33,7 @@ All chapters are stored as standard Markdown files inside the [`content/`](./con
 - [`content/09-capital-architecture.md`](./content/09-capital-architecture.md)
 - [`content/10-security-reliability.md`](./content/10-security-reliability.md)
 - [`content/11-development-roadmap.md`](./content/11-development-roadmap.md)
-- [`content/12-risks-and-limitations.md`](./content/12-risks-and-limitations.md)
-- [`content/13-conclusion.md`](./content/13-conclusion.md)
-- [`content/14-references-and-terminology.md`](./content/14-references-and-terminology.md)
+- [`content/12-conclusion.md`](./content/12-conclusion.md)
 
 Simply open any file in `content/`, edit the markdown, save, and your changes will immediately update.
 

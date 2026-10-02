@@ -32,9 +32,7 @@ Blackwood Protocol is an autonomous execution infrastructure designed for the em
 9. Capital Architecture  
 10. Security, Reliability, and Operational Controls  
 11. Development Roadmap  
-12. Risks and Limitations  
-13. Conclusion  
-14. References and Terminology  
+12. Conclusion  
 
 ---
 
@@ -1192,74 +1190,7 @@ The execution layer remains the foundation.
 
 ---
 
-# 12 · Risks and Limitations
-
-Blackwood is an execution system, not a guarantee of profitable trading.
-
-Autonomous execution introduces significant technical and market risk.
-
-## 12.1 Market Risk
-
-Stock Token prices can move rapidly and may not converge toward a reference within an expected time period.
-
-Historical relationships are not guarantees of future behavior.
-
-## 12.2 Liquidity Risk
-
-Onchain liquidity can change without warning.
-
-An opportunity visible at small size may disappear at larger size or become unprofitable due to price impact.
-
-## 12.3 Reference Risk
-
-External and onchain reference sources can become stale, unavailable, delayed, or temporarily inappropriate for a particular strategy.
-
-Blackwood reduces this risk through validation and circuit breakers but cannot eliminate it.
-
-## 12.4 Execution Risk
-
-A profitable opportunity can disappear between detection and settlement.
-
-Network latency, block production, RPC delays, competing transactions, and pool-state changes can all affect final execution.
-
-## 12.5 Smart Contract Risk
-
-Smart contracts used by Blackwood or external protocols can contain vulnerabilities.
-
-Atomic settlement reduces certain classes of execution risk but does not eliminate contract risk.
-
-## 12.6 Strategy Risk
-
-Statistical relationships change.
-
-A strategy calibrated in one market regime may behave poorly in another.
-
-Strategies therefore require continuous monitoring, evaluation, and empirical calibration.
-
-## 12.7 Infrastructure Risk
-
-Blackwood depends on infrastructure outside its direct control, including:
-
-- RPC providers;
-- blockchain availability;
-- external APIs;
-- oracle infrastructure;
-- decentralized exchanges;
-- network connectivity.
-
-Redundancy and monitoring can reduce this dependency but cannot remove it entirely.
-
-## 12.8 Autonomous-System Risk
-
-Autonomy increases the speed at which both good and bad decisions can propagate.
-
-That is precisely why Blackwood separates strategy intelligence from risk and execution authority.
-
-The system is designed to make autonomous operation bounded rather than unrestricted.
-
----
-
-# 13 · Conclusion
+# 12 · Conclusion
 
 Tokenization is changing the structure of financial markets.
 
@@ -1314,92 +1245,3 @@ Blackwood is building for the point where market participation becomes programma
 
 ### The Agentic Execution Layer for Tokenized Equities.
 
----
-
-# 14 · References and Terminology
-
-## Selected Ecosystem References
-
-The architecture described in this paper is informed by publicly available documentation from the Robinhood Chain, Robinhood Stock Token, Uniswap, and Chainlink ecosystems.
-
-Key reference areas include:
-
-1. **Robinhood Chain**  
-   Network architecture, Stock Tokens, AI-native onchain financial infrastructure, and chain connectivity.
-
-2. **Robinhood Stock Token APIs**  
-   Asset metadata, underlying-equity bid/ask data, corporate-action information, and multiplier-aware market data.
-
-3. **Robinhood Agentic Trading**  
-   Robinhood's public direction toward AI agents capable of scanning market data and executing within user-defined guardrails.
-
-4. **Uniswap on Robinhood Chain**  
-   Onchain swap and liquidity infrastructure across supported Uniswap protocol versions and routing systems.
-
-5. **Chainlink Data Infrastructure**  
-   Onchain price feeds, data streams, reference-data freshness, and monitoring practices.
-
-## Terminology
-
-### Agent
-A specialized autonomous system that evaluates market state and proposes strategy actions.
-
-### Market State
-Blackwood's normalized representation of current price, liquidity, session, volatility, reference, and execution conditions.
-
-### Reference Price
-A market value used as an external or onchain comparison surface for strategy reasoning.
-
-### Executable Price
-The effective price available for a specific trade size through actual onchain liquidity.
-
-### Execution Intent
-A structured strategy proposal describing an action the agent wishes to take.
-
-### Risk Engine
-The authority responsible for validating whether an execution intent is permitted under current protocol constraints.
-
-### Simulation
-Pre-submission evaluation of a proposed transaction against current chain state.
-
-### Atomic Execution
-Execution in which all required operations settle together or the complete transaction reverts.
-
-### Circuit Breaker
-A system control that pauses execution globally, by strategy, or by asset when configured safety conditions are triggered.
-
-### Stock Token
-A tokenized instrument referencing a traditional equity or related asset according to the applicable issuer and platform structure. A Stock Token should not be assumed to represent direct ownership of the underlying share unless explicitly defined as such by its issuer.
-
----
-
-# Implementation Status Note
-
-This whitepaper describes Blackwood Protocol's intended V1 architecture and development direction.
-
-Components should be labeled on the public website according to their actual implementation status, for example:
-
-| Component | Suggested Status |
-|---|---|
-| Market State Engine | In Development |
-| Mean Reversion Scanner | In Development |
-| Cross-Pool Scanner | In Development |
-| Mean Reversion Execution | Planned / Testing |
-| Atomic Arbitrage Execution | Conditional on observed market edge |
-| Adaptive Liquidity Engine | Planned |
-| Public Capital Layer | Future |
-| ERC-4626 Vault | Not part of V1 |
-
-Status labels should be updated as development progresses rather than presenting planned functionality as already deployed.
-
----
-
-# Disclaimer
-
-Blackwood Protocol is an experimental technology platform under active development. This document describes a proposed technical architecture and development direction and should not be interpreted as a representation that every described component is currently deployed or production-ready.
-
-Nothing in this whitepaper constitutes financial, investment, legal, accounting, or tax advice, an offer to sell securities, or a solicitation to purchase any financial product.
-
-Tokenized assets, digital assets, autonomous execution systems, smart contracts, and decentralized financial infrastructure involve substantial risk, including loss of capital, market volatility, liquidity limitations, smart-contract vulnerabilities, oracle failures, infrastructure outages, and regulatory uncertainty.
-
-Technical architecture, integrations, supported assets, strategies, parameters, roadmap items, and protocol functionality may change as Blackwood Protocol develops.

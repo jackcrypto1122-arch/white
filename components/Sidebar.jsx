@@ -21,8 +21,8 @@ const CHAPTER_GROUPS = [
     slugs: ['capital-architecture', 'security-reliability', 'development-roadmap'],
   },
   {
-    category: 'APPENDIX',
-    slugs: ['risks-and-limitations', 'conclusion', 'references-and-terminology'],
+    category: 'CONCLUSION',
+    slugs: ['conclusion'],
   },
 ];
 
