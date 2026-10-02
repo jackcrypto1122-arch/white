@@ -3,24 +3,23 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import CodeBlock from './CodeBlock';
+import { slugifyHeading } from '@/lib/slug';
+
+function getHeadingText(children) {
+  if (typeof children === 'string') return children;
+  if (typeof children === 'number') return String(children);
+  if (Array.isArray(children)) return children.map(getHeadingText).join('');
+  if (children && typeof children === 'object' && children.props) {
+    return getHeadingText(children.props.children);
+  }
+  return '';
+}
 
 export default function MarkdownRenderer({ content }) {
-  const seenIds = new Map();
-
-  const getUniqueId = (text) => {
-    const baseId = String(text)
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/\s+/g, '-');
-    const count = seenIds.get(baseId) || 0;
-    seenIds.set(baseId, count + 1);
-    return count > 0 ? `${baseId}-${count}` : baseId;
-  };
-
   const customComponents = {
     h2({ children }) {
-      const text = typeof children === 'string' ? children : String(children);
-      const id = getUniqueId(text);
+      const text = getHeadingText(children);
+      const id = slugifyHeading(text);
 
       return (
         <h2 id={id} className="content-h2 group">
@@ -32,8 +31,8 @@ export default function MarkdownRenderer({ content }) {
       );
     },
     h3({ children }) {
-      const text = typeof children === 'string' ? children : String(children);
-      const id = getUniqueId(text);
+      const text = getHeadingText(children);
+      const id = slugifyHeading(text);
 
       return (
         <h3 id={id} className="content-h3 group">

@@ -1094,99 +1094,29 @@ Strategy-level isolation, separate capital domains, and strategy-specific circui
 
 The roadmap is engineering-driven rather than calendar-driven.
 
-## Phase I · Market Infrastructure
+## Phase 1 · Foundation & Launch
 
-Establish the shared foundation:
+- Launch the Blackwood Protocol interface and initial ecosystem presence.
+- Establish the initial community and strategic ecosystem relationships.
+- Develop the Adaptive Liquidity Engine.
+- Establish core infrastructure for autonomous tokenized-equity execution.
+- Complete the initial token launch and protocol activation.
 
-- monorepo and application architecture;
-- Robinhood Chain connectivity;
-- Stock Token market-data integration;
-- reference-data integration;
-- Uniswap venue adapters;
-- Market State Engine;
-- session-state logic;
-- database schema;
-- risk-engine skeleton;
-- observability.
+## Phase 2 · Liquidity & Execution
 
-**Completion condition:** Blackwood can display and persist normalized market state for supported Stock Tokens using underlying, reference, and executable price surfaces.
+- Deploy the Adaptive Liquidity Engine to supported markets.
+- Expand integrations across tokenized-equity liquidity venues.
+- Develop the Cross-Pool Arbitrage engine.
+- Continuous 24/7 operation.
+- Progress toward continuous autonomous market monitoring and execution.
 
-## Phase II · Signal Network
+## Phase 3 · Expansion & Rewards
 
-Deploy the first agents in non-executing mode.
-
-### Mean Reversion Scanner
-Continuously measure and store potential pricing dislocations.
-
-### Cross-Pool Scanner
-Continuously search for executable route inefficiencies across supported liquidity surfaces.
-
-No capital is required to prove whether opportunities exist.
-
-**Completion condition:** the system can produce a reliable historical dataset of signals, opportunities, and rejected states.
-
-## Phase III · Controlled Mean Reversion Execution
-
-Add:
-
-- position sizing;
-- deterministic entries;
-- exits;
-- maximum holding duration;
-- stop conditions;
-- transaction simulation;
-- PnL accounting.
-
-Execution begins with paper trading, followed by deliberately limited protocol capital.
-
-## Phase IV · Cross-Pool Execution
-
-Cross-pool execution becomes active only if scanner data demonstrates repeatable executable opportunities.
-
-Where required:
-
-- introduce a minimal atomic execution contract;
-- test using Foundry;
-- validate route simulation;
-- enforce minimum output / profit conditions;
-- begin with small capital limits.
-
-If the data does not support a reliable edge, the scanner remains active without forcing execution.
-
-## Phase V · Adaptive Liquidity
-
-Begin narrowly:
-
-- one Stock Token;
-- one stable asset;
-- one concentrated-liquidity venue.
-
-Add:
-
-- LP position creation;
-- range monitoring;
-- fee accounting;
-- inventory tracking;
-- volatility-aware range logic;
-- economic rebalance checks;
-- controlled withdrawal and recentering.
-
-## Phase VI · Network Expansion
-
-After the initial architecture is validated:
-
-- support additional Stock Tokens;
-- expand execution venues;
-- improve route optimization;
-- add strategy-level analytics;
-- refine risk models;
-- introduce additional specialized agents where market data supports them.
-
-## Phase VII · Capital Layer
-
-A broader capital architecture may be explored only after the execution network is mature enough to justify it.
-
-The execution layer remains the foundation.
+- Expand integrations with infrastructure providers, market participants, and strategic ecosystem partners.
+- Deploy Cross-Pool Arbitrage across supported venues.
+- Introduce protocol-aligned participation and incentive mechanisms.
+- Deploy token-to-underlying Mean Reversion strategies.
+- Introduce confidential strategy computation through Trusted Execution Environments.
 
 ---
 
